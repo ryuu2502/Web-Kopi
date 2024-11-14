@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Document</title>
+</head>
+<body>
+    <!-- Header -->
+<header>
+    <div class="container">
+        <div class="navbar-nav">
+            <h1 class="title"><i>Kopi <span class="kopi">Kenangan</span></i></h1>
+            <!-- Tombol hamburger -->
+            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+            <!-- Wrapper untuk menu -->
+            <nav class="nav-menu">
+                <ul class="nav-left">
+                    <li><a href="index.html">Menu</a></li>
+                </ul>
+                <ul class="nav-right">
+                    <li><a href="keranjang.html">Keranjang</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+      <!-- Keranjang Section -->
+    <section id="keranjang">
+        <div class="container">
+            <h2>Keranjang Anda</h2>
+            <p>Keranjang kosong. Tambahkan item dari menu.</p>
+            <!-- Ini bisa diperbarui dengan JavaScript saat item ditambahkan -->
+        </div>
+    </section>
+    <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    // Toggle menu saat tombol hamburger diklik
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        });
+
+    // Tutup menu jika klik di luar area nav-menu
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            navMenu.classList.remove('active');
+        }
+        });
+      </script>
+</body>
+</html>
